@@ -1,58 +1,59 @@
 import axios from 'axios'
 import { API_URL } from 'config/api.config'
-import Cookies from 'js-cookie'
 
-// import { removeTokensStorage } from '@/services/auth/auth.helper'
-// import { AuthService } from '@/services/auth/auth.service'
+// import Cookies from 'js-cookie'
 
-// import { errorCatch } from './api.helpers'
+// // import { removeTokensStorage } from '@/services/auth/auth.helper'
+// // import { AuthService } from '@/services/auth/auth.service'
 
-// const instance = axios.create({
-// 	baseURL: API_URL,
-// 	headers: {
-// 		'Content-Type': 'application/json',
-// 	},
-// })
+// // import { errorCatch } from './api.helpers'
 
-// instance.interceptors.request.use((config) => {
-// 	const accessToken = Cookies.get('accessToken')
-// 	if (config.headers && accessToken)
-// 		config.headers.Authorization = `Bearer ${accessToken}`
+// // const instance = axios.create({
+// // 	baseURL: API_URL,
+// // 	headers: {
+// // 		'Content-Type': 'application/json',
+// // 	},
+// // })
 
-// 	return config
-// })
+// // instance.interceptors.request.use((config) => {
+// // 	const accessToken = Cookies.get('accessToken')
+// // 	if (config.headers && accessToken)
+// // 		config.headers.Authorization = `Bearer ${accessToken}`
 
-// instance.interceptors.response.use(
-// 	(config) => config,
-// 	async (error) => {
-// 		const originalRequest = error.config
+// // 	return config
+// // })
 
-// 		if (
-// 			(error.response.status === 401 ||
-// 				errorCatch(error) === 'jwt expired' ||
-// 				errorCatch(error) === 'jwt must be provided') &&
-// 			error.config &&
-// 			!error.config._isRetry
-// 		) {
-// 			originalRequest._isRetry = true
-// 			try {
-// 				await AuthService.getNewTokens()
+// // instance.interceptors.response.use(
+// // 	(config) => config,
+// // 	async (error) => {
+// // 		const originalRequest = error.config
 
-// 				return instance.request(originalRequest)
-// 			} catch (e) {
-// 				if (errorCatch(e) === 'jwt expired') removeTokensStorage()
-// 			}
-// 		}
+// // 		if (
+// // 			(error.response.status === 401 ||
+// // 				errorCatch(error) === 'jwt expired' ||
+// // 				errorCatch(error) === 'jwt must be provided') &&
+// // 			error.config &&
+// // 			!error.config._isRetry
+// // 		) {
+// // 			originalRequest._isRetry = true
+// // 			try {
+// // 				await AuthService.getNewTokens()
 
-// 		throw error
-// 	}
-// )
+// // 				return instance.request(originalRequest)
+// // 			} catch (e) {
+// // 				if (errorCatch(e) === 'jwt expired') removeTokensStorage()
+// // 			}
+// // 		}
 
-// export default instance
+// // 		throw error
+// // 	}
+// // )
 
-// export const axiosClassic = axios.create({
-// 	baseURL: API_URL,
-// 	headers: {
-// 		'Content-Type': 'application/json',
-// 	},
-// })
+// // export default instance
+
+export const axiosClassic = axios.create({
+	baseURL: API_URL,
+	headers: {
+		'Content-Type': 'application/json',
+	},
+})
