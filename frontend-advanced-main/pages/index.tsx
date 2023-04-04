@@ -1,7 +1,6 @@
 import { errorCatch } from 'api/api.helpers'
 import type { GetStaticProps, NextPage } from 'next'
 
-import Home from '@/screens/home/Home'
 import { IHome } from '@/screens/home/home.types'
 
 import { IGalleryItem } from '@/components/ui/gallery/gallery.types'
@@ -13,6 +12,8 @@ import { MovieService } from '@/services/movie/movie.service'
 import { getGenresList } from '@/utils/movie/getGenresList'
 
 import { getActorUrl, getMovieUrl } from '@/configs/url.config'
+
+import Home from '../myapp/components/screens/home/Home'
 
 const HomePage: NextPage<IHome> = (props) => {
 	return <Home {...props} />
