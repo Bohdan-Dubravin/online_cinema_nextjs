@@ -4,21 +4,21 @@ import Menu from '../Menu'
 import { usePopularGenres } from './usePopularGenres'
 
 const GenreMenu = () => {
-	// const { isLoading, data } = usePopularGenres()
+	const { isLoading, data } = usePopularGenres()
 
-	return <h1>sajfas</h1>
-	// isLoading ? (
-	// 	<div className="mx-11 mb-6">
-	// 		{/* <SkeletonLoader count={5} className="h-7 mt-6" /> */}
-	// 	</div>
-	// ) : (
-	// 	<Menu
-	// 		menu={{
-	// 			title: 'Popular genres',
-	// 			items: data || [],
-	// 		}}
-	// 	/>
-	// )
+	return isLoading ? (
+		<div className="mx-11 mb-6">
+			<h1>loading</h1>
+			{/* <SkeletonLoader count={5} className="h-7 mt-6" /> */}
+		</div>
+	) : (
+		<Menu
+			menu={{
+				title: 'Popular genres',
+				items: data || [],
+			}}
+		/>
+	)
 }
 
 export default GenreMenu
