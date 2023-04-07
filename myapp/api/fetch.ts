@@ -1,4 +1,4 @@
-import axios from './interceptors'
+import { axiosClassic } from './interceptors'
 
 type TypeInput = {
 	url: string
@@ -7,7 +7,7 @@ type TypeInput = {
 }
 
 export const api = async ({ url, method, body }: TypeInput) => {
-	return axios({
+	return axiosClassic({
 		method,
 		url,
 		data: body,

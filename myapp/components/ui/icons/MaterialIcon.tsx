@@ -10,7 +10,7 @@ export const MaterialIcon: FC<{ name: TypeMaterialIconName }> = ({ name }) => {
 	const IconComponent = MaterialIcons[name]
 
 	// if (isRenderClient)
-	return <IconComponent /> || <MaterialIcons.MdDragIndicator />
+	return <IconComponent /> || <MaterialIcons.MdOutlineDragIndicator />
 	// else return null
 }
 export default 'gew'
