@@ -1,9 +1,7 @@
-import { FC } from 'react'
-
 import FavoriteMovieList from './FavoriteMovieList/FavoriteMovieList'
 import PopularMovieList from './PopularMovieList/PopularMovieList'
 
-const MoviesContainer: FC = () => {
+const MoviesContainer = () => {
 	return (
 		<div>
 			<PopularMovieList />

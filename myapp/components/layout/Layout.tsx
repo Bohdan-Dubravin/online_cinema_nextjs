@@ -11,7 +11,8 @@ const Layout = ({ children }: Props) => {
 		<div className={styles.layout}>
 			<Navigation />
 			<div className={styles.center}>{children}</div>
-			{/* <Sidebar /> */}
+			<Sidebar />
+			{/* <div></div> */}
 		</div>
 	)
 }

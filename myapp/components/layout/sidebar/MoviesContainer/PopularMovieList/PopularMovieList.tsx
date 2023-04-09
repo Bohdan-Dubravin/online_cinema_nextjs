@@ -1,24 +1,23 @@
-import { FC } from 'react'
 import { useQuery } from 'react-query'
 
-import SkeletonLoader from '@/components/ui/skeleton-loader/SkeletonLoader'
+import SkeletonLoader from '@/components/ui/SkeletonLoader'
 
-import { MovieService } from '@/services/movie/movie.service'
+import { MovieService } from '@/services/movie.service'
 
 import MovieList from '../MovieList'
 
-const PopularMovieList: FC = () => {
+const PopularMovieList = () => {
 	const { isLoading, data: popularMovies } = useQuery(
 		'Most popular movie in sidebar',
 		() => MovieService.getMostPopularMovies(),
 		{
-			select: (data) => data.slice(0, 3),
+			select: ({ data }) => data.slice(0, 3),
 		}
 	)
+	console.log(popularMovies)
 
 	return isLoading ? (
 		<div className="mt-11">
-			pga
 			<SkeletonLoader count={3} className="h-28 mb-4" />
 		</div>
 	) : (

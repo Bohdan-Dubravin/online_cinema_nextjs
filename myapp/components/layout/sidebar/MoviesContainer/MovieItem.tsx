@@ -1,12 +1,11 @@
+import { getGenreUrl, getMovieUrl } from 'config/url.config'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
 import { MaterialIcon } from '@/components/ui/icons/MaterialIcon'
 
-import { getGenresListEach } from '@/utils/movie/getGenresList'
-
-import { getGenreUrl, getMovieUrl } from '@/configs/url.config'
+import { getGenresListEach } from '@/utils/movie/getGengesList'
 
 import styles from './MovieList.module.scss'
 import { IWidgetMovie } from './movie.types'
@@ -15,16 +14,14 @@ const MovieItem: FC<{ movie: IWidgetMovie }> = ({ movie }) => {
 	return (
 		<div className={styles.item}>
 			<Link href={getMovieUrl(movie.slug)}>
-				<a>
-					<Image
-						alt={movie.title}
-						width={65}
-						height={97}
-						src={movie.poster}
-						draggable={false}
-						priority
-					/>
-				</a>
+				<Image
+					alt={movie.title}
+					width={65}
+					height={97}
+					src={movie.poster}
+					draggable={false}
+					priority
+				/>
 			</Link>
 			<div className={styles.info}>
 				<div>
@@ -32,7 +29,7 @@ const MovieItem: FC<{ movie: IWidgetMovie }> = ({ movie }) => {
 					<div className={styles.genres}>
 						{movie.genres.map(({ slug, name, _id }, idx) => (
 							<Link key={_id} href={getGenreUrl(slug)}>
-								<a>{getGenresListEach(idx, movie.genres.length, name)}</a>
+								{getGenresListEach(idx, movie.genres.length, name)}
 							</Link>
 						))}
 					</div>

@@ -29,6 +29,11 @@
 			"@/store/*": ["store/*"]
 		}
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"../myapp/utils/meta/MetaNoIndex.tsx"
+	],
 	"exclude": ["node_modules"]
 }

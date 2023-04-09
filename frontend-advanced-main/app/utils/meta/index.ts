@@ -1,2 +1,2 @@
 export { Meta } from './Meta'
-export { MetaNoIndex } from './MetaNoIndex'
+export { MetaNoIndex } from '../../../../myapp/utils/meta/MetaNoIndex'
