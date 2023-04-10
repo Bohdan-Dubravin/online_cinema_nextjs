@@ -1,3 +1,5 @@
+import { toastr } from 'react-redux-toastr'
+
 import Layout from '@/components/layout/Layout'
 import Heading from '@/components/ui/heading/Heading'
 

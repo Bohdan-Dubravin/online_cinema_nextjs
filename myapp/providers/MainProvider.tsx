@@ -1,7 +1,11 @@
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { Provider } from 'react-redux'
 
 import Layout from '@/components/layout/Layout'
 
+import { store } from '@/store/store'
+
+import HeadProvider from './HeadProvider/HeadProvider'
 import ReduxToast from './ReduxToast'
 
 const queryClient = new QueryClient({
@@ -14,10 +18,14 @@ const queryClient = new QueryClient({
 
 const MainProvider = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<QueryClientProvider client={queryClient}>
-			<ReduxToast />
-			<Layout>{children}</Layout>
-		</QueryClientProvider>
+		<HeadProvider>
+			<Provider store={store}>
+				<QueryClientProvider client={queryClient}>
+					<ReduxToast />
+					<Layout>{children}</Layout>
+				</QueryClientProvider>
+			</Provider>
+		</HeadProvider>
 	)
 }
 export default MainProvider
