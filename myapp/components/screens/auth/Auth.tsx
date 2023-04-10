@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
+import Button from '@/components/ui/form-elements/Button'
 import Heading from '@/components/ui/heading/Heading'
 
 import useAuth from '@/hooks/useAuth'
@@ -8,6 +9,7 @@ import useAuth from '@/hooks/useAuth'
 import Meta from '@/utils/meta/Meta'
 
 import styles from './Auth.module.scss'
+import { AuthField } from './AuthField'
 import { IAuthInput } from './auth.interface'
 import useAuthRedirect from './useAuthRedirect'
 
@@ -43,13 +45,18 @@ const Auth = () => {
 			<section className={styles.wrapper}>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<Heading title="Auth" className="mb-6" />
+					<AuthField
+						register={registerInput}
+						formState={formState}
+						isPasswordRequired={true}
+					/>
 					<div className={styles.buttons}>
-						<button disabled={isLoading} onClick={() => setType('login')}>
+						<Button disabled={isLoading} onClick={() => setType('login')}>
 							Login
-						</button>
-						<button disabled={isLoading} onClick={() => setType('login')}>
+						</Button>
+						<Button disabled={isLoading} onClick={() => setType('register')}>
 							Register
-						</button>
+						</Button>
 					</div>
 				</form>
 			</section>
