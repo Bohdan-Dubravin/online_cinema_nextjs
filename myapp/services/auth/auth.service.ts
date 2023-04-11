@@ -1,8 +1,7 @@
 import { getContentType } from 'api/api.helpers'
 import axios from 'axios'
+import { API_URL, getAuthUrl } from 'config/api.config'
 import Cookies from 'js-cookie'
-
-import { API_URL, getAuthUrl } from '@/configs/api.config'
 
 import { IAuthResponse } from '@/store/user/user.interface'
 
