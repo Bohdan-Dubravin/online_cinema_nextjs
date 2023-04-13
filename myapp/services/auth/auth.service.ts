@@ -31,7 +31,6 @@ export const AuthService = {
 				password,
 			}
 		)
-		console.log(response)
 		if (response.data.accessToken) {
 			saveToStorage(response.data)
 		}

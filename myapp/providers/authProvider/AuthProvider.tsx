@@ -27,7 +27,7 @@ const AuthProvider = ({
 	useEffect(() => {
 		const refreshToken = Cookies.get('refreshToken')
 		if (refreshToken && user) {
-			logout()
+			// logout()
 		}
 	}, [pathname])
 
