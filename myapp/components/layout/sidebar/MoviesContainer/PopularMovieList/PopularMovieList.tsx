@@ -14,7 +14,6 @@ const PopularMovieList = () => {
 			select: ({ data }) => data.slice(0, 3),
 		}
 	)
-	console.log(popularMovies)
 
 	return isLoading ? (
 		<div className="mt-11">

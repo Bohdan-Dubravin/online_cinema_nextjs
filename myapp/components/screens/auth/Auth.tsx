@@ -4,7 +4,8 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import Button from '@/components/ui/form-elements/Button'
 import Heading from '@/components/ui/heading/Heading'
 
-import useAuth from '@/hooks/useAuth'
+import { useActions } from '@/hooks/useActions'
+import { useAuth } from '@/hooks/useAuth'
 
 import Meta from '@/utils/meta/Meta'
 
@@ -16,9 +17,8 @@ import useAuthRedirect from './useAuthRedirect'
 const Auth = () => {
 	useAuthRedirect()
 
-	const { isLoading } = useAuth()
-
 	const [type, setType] = useState<'login' | 'register'>('login')
+	const { isLoading } = useAuth()
 
 	const {
 		register: registerInput,
@@ -27,10 +27,7 @@ const Auth = () => {
 		reset,
 	} = useForm<IAuthInput>({ mode: 'onBlur' })
 
-	const login = (data: any) => {}
-
-	const register = (data: any) => {}
-
+	const { login, register } = useActions()
 	const onSubmit: SubmitHandler<IAuthInput> = (data) => {
 		if (type === 'login') {
 			login(data)

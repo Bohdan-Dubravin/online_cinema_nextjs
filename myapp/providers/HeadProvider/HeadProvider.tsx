@@ -11,8 +11,8 @@ const HeadProvider = ({ children }: { children: React.ReactElement }) => {
 				color={accentColor}
 				startPosition={0.3}
 				stopDelayMs={200}
-				height={10}
-				options={{ easing: 'ease', speed: 2000 }}
+				height={3}
+				options={{ easing: 'ease', speed: 700 }}
 			/>
 			<Head>
 				<meta charSet="UTF-8" />

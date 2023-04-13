@@ -1,4 +1,3 @@
-const useAuth = () => {
-	return { user: null, isLoading: false }
-}
-export default useAuth
+import { useTypedSelector } from './useTypedSelector'
+
+export const useAuth = () => useTypedSelector((state) => state.user)

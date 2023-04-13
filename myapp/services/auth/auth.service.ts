@@ -31,7 +31,7 @@ export const AuthService = {
 				password,
 			}
 		)
-
+		console.log(response)
 		if (response.data.accessToken) {
 			saveToStorage(response.data)
 		}
@@ -39,6 +39,7 @@ export const AuthService = {
 		return response
 	},
 	logout() {
+		console.log('worked')
 		removeTokensStorage()
 		localStorage.removeItem('user')
 	},

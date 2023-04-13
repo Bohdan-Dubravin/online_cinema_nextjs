@@ -16,7 +16,6 @@ const MovieList: FC<{ list: IMovieList }> = ({
 			))}
 			<Link href={link} className={styles.button}>
 				See more
-				{/* <a className={styles.button}>See more</a> */}
 			</Link>
 		</div>
 	)

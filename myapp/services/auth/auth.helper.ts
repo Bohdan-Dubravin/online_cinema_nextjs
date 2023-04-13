@@ -9,7 +9,9 @@ export const saveTokensStorage = (data: ITokens) => {
 
 export const saveToStorage = (data: IAuthResponse) => {
 	saveTokensStorage(data)
+
 	localStorage.setItem('user', JSON.stringify(data.user))
+	console.log(localStorage.getItem('user'))
 }
 
 export const removeTokensStorage = () => {
