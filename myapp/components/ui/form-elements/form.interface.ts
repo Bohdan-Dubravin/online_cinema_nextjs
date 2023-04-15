@@ -1,4 +1,4 @@
-// import { EditorProps, EditorState } from 'draft-js'
+import { EditorProps } from 'draft-js'
 import { ButtonHTMLAttributes, CSSProperties, InputHTMLAttributes } from 'react'
 import { FieldError } from 'react-hook-form'
 
@@ -22,9 +22,9 @@ export interface IUploadField {
 
 export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
-// type TypeEditorPropsField = EditorProps & IFieldProps
+type TypeEditorPropsField = EditorProps & IFieldProps
 
-// export interface ITextEditor extends Omit<TypeEditorPropsField, 'editorState'> {
-// 	onChange: (...event: any[]) => void
-// 	value: string
-// }
+export interface ITextEditor extends Omit<TypeEditorPropsField, 'editorState'> {
+	onChange: (...event: any[]) => void
+	value: string
+}
