@@ -1,5 +1,3 @@
-import { IGenreEditInput } from './genre-edit.interface'
-import { useGenreEdit } from './useGenreEdit'
 import dynamic from 'next/dynamic'
 import { FC } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
@@ -15,7 +13,9 @@ import Field from '@/ui/form-elements/Field'
 import Heading from '@/ui/heading/Heading'
 
 import { Meta } from '@/utils/meta'
-import generateSlug from '@/utils/string/generateSlug'
+
+import { IGenreEditInput } from './genre-edit.interface'
+import { useGenreEdit } from './useGenreEdit'
 
 // "^[./]((?!scss).)*$",
 
