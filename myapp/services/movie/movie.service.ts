@@ -29,7 +29,7 @@ export const MovieService = {
 	},
 
 	async update(_id: string, data: IMovieEditInput) {
-		return $axios.put<string>(getMoviesUrl(`/${_id}`), data)
+		return $axios.patch<string>(getMoviesUrl(`/${_id}`), data)
 	},
 
 	async delete(_id: string) {

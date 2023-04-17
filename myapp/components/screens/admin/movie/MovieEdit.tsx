@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic'
-import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
 import SkeletonLoader from '@/components/ui/SkeletonLoader'
@@ -25,7 +24,7 @@ const DynamicSelect = dynamic(() => import('@/ui/select/Select'), {
 	ssr: false,
 })
 
-const MovieEdit: FC = () => {
+const MovieEdit = () => {
 	const {
 		handleSubmit,
 		register,
@@ -100,9 +99,11 @@ const MovieEdit: FC = () => {
 									error={error}
 									field={field}
 									placeholder="Genres"
-									options={genres || []}
+									options={genres?.data || []}
 									isLoading={isGenresLoading}
 									isMulti
+									value={field.value}
+									name="genres"
 								/>
 							)}
 						/>
@@ -117,9 +118,10 @@ const MovieEdit: FC = () => {
 									error={error}
 									field={field}
 									placeholder="Actors"
-									options={actors || []}
+									options={actors?.data || []}
 									isLoading={isActorsLoading}
 									isMulti
+									name="actors"
 								/>
 							)}
 						/>
