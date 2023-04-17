@@ -11,7 +11,7 @@ const PopularMovieList = () => {
 		'Most popular movie in sidebar',
 		() => MovieService.getMostPopularMovies(),
 		{
-			select: ({ data }) => data.slice(0, 3),
+			select: (data) => data.slice(0, 3),
 		}
 	)
 

@@ -1,6 +1,8 @@
 import $axios, { axiosClassic } from 'api/interceptors'
 import { getActorsUrl } from 'config/api.config'
 
+import { IActorEditInput } from '@/components/screens/admin/actor/actor-edit.interface'
+
 import { IActor } from '@/shared/types/movie.types'
 
 export const ActorService = {
@@ -13,7 +15,7 @@ export const ActorService = {
 	},
 
 	async update(_id: string, data: IActorEditInput) {
-		return $axios.put<string>(getActorsUrl(`/${_id}`), data)
+		return $axios.patch<string>(getActorsUrl(`/${_id}`), data)
 	},
 
 	async delete(_id: string) {
