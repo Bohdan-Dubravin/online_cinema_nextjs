@@ -1,6 +1,8 @@
 import axios from 'api/interceptors'
 import { getUsersUrl } from 'config/api.config'
 
+import { IProfileInput } from '@/components/screens/profile/profile.interface'
+
 import { IMovie } from '@/shared/types/movie.types'
 import { IUser } from '@/shared/types/user.types'
 
@@ -10,7 +12,7 @@ export const UserService = {
 	},
 
 	async updateProfile(data: IProfileInput) {
-		return axios.put<string>(getUsersUrl('/profile'), data)
+		return axios.patch<string>(getUsersUrl('/profile'), data)
 	},
 
 	async getUsers(searchTerm?: string) {

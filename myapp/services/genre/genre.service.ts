@@ -7,7 +7,7 @@ import { IGenre } from '@/shared/types/movie.types'
 
 export const GenreService = {
 	async getBySlug(slug: string) {
-		return axiosClassic.get<IGenre>(getGenresUrl(`/by-slug/${slug}`))
+		return axiosClassic.get<IGenre>(getGenresUrl(`/slug/${slug}`))
 	},
 
 	async create() {
@@ -33,7 +33,7 @@ export const GenreService = {
 	},
 
 	async getCollections() {
-		return axiosClassic.get<ICollection[]>(getGenresUrl('/collections'))
+		return axiosClassic.get<ICollectio[]>(getGenresUrl('/collections'))
 	},
 
 	async getById(_id: string) {

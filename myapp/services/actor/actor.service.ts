@@ -7,7 +7,7 @@ import { IActor } from '@/shared/types/movie.types'
 
 export const ActorService = {
 	async getBySlug(slug: string) {
-		return axiosClassic.get<IActor>(getActorsUrl(`/by-slug/${slug}`))
+		return axiosClassic.get<IActor>(getActorsUrl(`/slug/${slug}`))
 	},
 
 	async create() {

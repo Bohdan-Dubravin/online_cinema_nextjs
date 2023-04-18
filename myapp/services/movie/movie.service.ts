@@ -5,15 +5,15 @@ import { IMovie } from '@/shared/types/movie.types'
 
 export const MovieService = {
 	async getBySlug(slug: string) {
-		return axiosClassic.get<IMovie>(getMoviesUrl(`/by-slug/${slug}`))
+		return axiosClassic.get<IMovie>(getMoviesUrl(`/slug/${slug}`))
 	},
 
 	async getByActor(actorId: string) {
-		return axiosClassic.get<IMovie[]>(getMoviesUrl(`/by-actor/${actorId}`))
+		return axiosClassic.get<IMovie[]>(getMoviesUrl(`/actor/${actorId}`))
 	},
 
 	async getByGenres(genreIds: string[]) {
-		return axiosClassic.post<IMovie[]>(getMoviesUrl(`/by-genres`), {
+		return axiosClassic.post<IMovie[]>(getMoviesUrl(`/genres`), {
 			genreIds,
 		})
 	},
@@ -52,7 +52,7 @@ export const MovieService = {
 
 	async getMostPopularMovies() {
 		const { data: movies } = await axiosClassic.get<IMovie[]>(
-			getMoviesUrl('/most-popular')
+			getMoviesUrl('/popular')
 		)
 
 		return movies
