@@ -1,17 +1,18 @@
-import { toastr } from 'react-redux-toastr'
-
-import Layout from '@/components/layout/Layout'
 import Heading from '@/components/ui/heading/Heading'
+import Slider from '@/components/ui/slider/Slider'
 
 import Meta from '@/utils/meta/Meta'
 
-const Home = () => {
+import { IHome } from './home.types'
+
+const Home = ({ slides }: IHome) => {
 	return (
 		<Meta title="Watch movies online" description="movie app watch movies">
 			<Heading
 				title="Watch Movies Online"
 				className="text-gray-500 mb-8 text-xl"
 			/>
+			{slides && slides.length && <Slider slides={slides} />}
 		</Meta>
 	)
 }
