@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { FC } from 'react'
+import React, { FC } from 'react'
 
 import styles from './Banner.module.scss'
 
@@ -8,7 +8,7 @@ interface IBanner {
 	Detail?: FC | null
 }
 
-const Banner = ({ imagePath, Detail }: IBanner) => {
+const Banner: FC<IBanner> = ({ imagePath, Detail }) => {
 	return (
 		<div className={styles.banner}>
 			<Image
@@ -17,8 +17,8 @@ const Banner = ({ imagePath, Detail }: IBanner) => {
 				draggable={false}
 				fill
 				className="image-like-bg object-top"
-				priority
 				unoptimized
+				priority
 			/>
 			{Detail && <Detail />}
 		</div>

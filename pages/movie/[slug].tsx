@@ -2,6 +2,7 @@ import { errorCatch } from 'api/api.helpers'
 import { getMovieUrl } from 'config/url.config'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
+import SingleMovie from '@/components/screens/single-movie/SingleMovie'
 import { IGalleryItem } from '@/components/ui/gallery/gallery.types'
 
 import { IMovie } from '@/shared/types/movie.types'
