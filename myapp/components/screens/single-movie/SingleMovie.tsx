@@ -17,9 +17,9 @@ import { useUpdateCountOpened } from './useUpdateCountOpened'
 const DynamicPlayer = dynamic(() => import('@/ui/video-player/VideoPlayer'), {
 	ssr: false,
 })
-// const DynamicRateMovie = dynamic(() => import('./RateMovie/RateMovie'), {
-// 	ssr: false,
-// })
+const DynamicRateMovie = dynamic(() => import('./RateMovie/RateMovie'), {
+	ssr: false,
+})
 
 const SingleMovie: FC<{ movie: IMovie; similarMovies: IGalleryItem[] }> = ({
 	movie,
@@ -36,12 +36,12 @@ const SingleMovie: FC<{ movie: IMovie; similarMovies: IGalleryItem[] }> = ({
 
 			<DynamicPlayer videoSource={movie.videoUrl} slug={movie.slug} />
 
-			{/* <div className="mt-12">
+			<div className="mt-12">
 				<SubHeading title="Similar" />
 				<Gallery items={similarMovies} />
-			</div> */}
+			</div>
 
-			{/* <DynamicRateMovie slug={movie.slug} _id={movie._id} /> */}
+			<DynamicRateMovie slug={movie.slug} _id={movie._id} />
 		</Meta>
 	)
 }

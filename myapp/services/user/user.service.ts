@@ -30,7 +30,7 @@ export const UserService = {
 	},
 
 	async updateUser(_id: string, data: IProfileInput) {
-		return axios.put<string>(getUsersUrl(`/${_id}`), data)
+		return axios.patch<string>(getUsersUrl(`/${_id}`), data)
 	},
 
 	async deleteUser(_id: string) {
@@ -38,7 +38,7 @@ export const UserService = {
 	},
 
 	async getFavorites() {
-		return axios.get<IMovie[]>(getUsersUrl('/profile/favorites'))
+		return axios.get<IMovie[]>(getUsersUrl('/user-favorites'))
 	},
 
 	async toggleFavorite(movieId: string) {

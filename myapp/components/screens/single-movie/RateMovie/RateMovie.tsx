@@ -1,4 +1,7 @@
 import { FC } from 'react'
+import Ratings from 'react-ratings-declarative'
+
+import AuthButton from '@/components/ui/video-player/AuthPlaceholder/AuthButton'
 
 import { useAuth } from '@/hooks/useAuth'
 
@@ -18,12 +21,19 @@ const RateMovie: FC<{ slug: string; _id: string }> = ({ slug, _id }) => {
 					{isSended ? (
 						<div className={styles.thanks}>Thanks for rating!</div>
 					) : (
-						<StarRating
+						<Ratings
 							name="star-rating"
-							value={rating}
-							onStarClick={handleClick}
+							rating={rating}
+							changeRating={handleClick}
 							emptyStarColor="#4f4f4f"
-						/>
+							widgetRatedColors="red  "
+						>
+							<Ratings.Widget />
+							<Ratings.Widget />
+							<Ratings.Widget />
+							<Ratings.Widget />
+							<Ratings.Widget />
+						</Ratings>
 					)}
 				</>
 			) : (

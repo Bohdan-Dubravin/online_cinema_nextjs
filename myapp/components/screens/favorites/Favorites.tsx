@@ -1,17 +1,15 @@
-import { FC } from 'react'
+import { getMovieUrl } from 'config/url.config'
 
+import SkeletonLoader from '@/components/ui/SkeletonLoader'
 import Heading from '@/components/ui/heading/Heading'
-import SkeletonLoader from '@/components/ui/skeleton-loader/SkeletonLoader'
 
-import { Meta } from '@/utils/meta'
-
-import { getMovieUrl } from '@/configs/url.config'
+import Meta from '@/utils/meta/Meta'
 
 import FavoriteItem from './FavoriteItem'
 import styles from './Favorites.module.scss'
 import { useFavorites } from './useFavorites'
 
-const Favorites: FC = () => {
+const Favorites = () => {
 	const { favoritesMovies, isLoading } = useFavorites()
 
 	return (
