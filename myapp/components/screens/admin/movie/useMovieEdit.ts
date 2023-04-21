@@ -22,7 +22,7 @@ export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
 		{
 			onSuccess({ data }) {
 				getKeys(data).forEach((key) => {
-					setValue(key, data[key])
+					setValue(key.toString(), data[key])
 				})
 			},
 			onError(error) {

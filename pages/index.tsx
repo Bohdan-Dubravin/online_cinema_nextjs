@@ -75,6 +75,7 @@ export const getStaticProps: GetStaticProps = async () => {
 				slides: [],
 				trendingMovies: [],
 			} as IHome,
+			revalidate: 60,
 		}
 	}
 }

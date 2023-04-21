@@ -19,8 +19,6 @@ const SearchList = ({ movies }: SearchProps) => {
 							src={movie.poster || ''}
 							width={50}
 							height={50}
-							objectFit="cover"
-							objectPosition="top"
 							alt={movie.title}
 							draggable={false}
 						/>

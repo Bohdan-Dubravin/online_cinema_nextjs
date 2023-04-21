@@ -60,10 +60,13 @@ $shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
 	}
 
 	.content {
-		@apply relative z-2 text-center m-3 w-full;
+		@apply relative z-50 text-center m-3 w-full;
 
 		.title {
 			@apply font-semibold mb-1 text-white text-shadow;
 		}
 	}
 }
+// .title {
+// 	@apply text-white font-bold;
+// }

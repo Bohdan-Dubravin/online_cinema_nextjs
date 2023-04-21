@@ -102,7 +102,7 @@ const MovieEdit = () => {
 									options={genres?.data || []}
 									isLoading={isGenresLoading}
 									isMulti
-									value={field.value}
+									// value={field.value || ''}
 									name="genres"
 								/>
 							)}
