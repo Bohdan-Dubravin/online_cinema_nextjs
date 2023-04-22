@@ -1,6 +1,6 @@
 import { FormState, UseFormRegister } from 'react-hook-form'
 
-import Field from '@/components/ui/form-elements/Field'
+import InputField from '@/components/ui/form-elements/InputFIeld'
 
 import { validEmail } from '@/shared/regex'
 
@@ -17,7 +17,7 @@ export const AuthField = ({
 }: IAuthFields) => {
 	return (
 		<>
-			<Field
+			<InputField
 				{...register('email', {
 					required: 'Email is required',
 					pattern: { value: validEmail, message: 'Enter valid email address' },
@@ -25,7 +25,7 @@ export const AuthField = ({
 				placeholder="Email"
 				error={errors.email}
 			/>
-			<Field
+			<InputField
 				{...register('password', {
 					required: 'Password is required',
 					minLength: { value: 6, message: 'Enter password longer than 6' },

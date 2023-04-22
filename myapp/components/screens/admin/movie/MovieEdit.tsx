@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 import { Controller, useForm } from 'react-hook-form'
 
 import SkeletonLoader from '@/components/ui/SkeletonLoader'
-import Field from '@/components/ui/form-elements/FIeld'
+import InputField from '@/components/ui/form-elements/InputFIeld'
 
 import AdminNavigation from '@/ui/admin-navigation/AdminNavigation'
 import Button from '@/ui/form-elements/Button'
@@ -49,7 +49,7 @@ const MovieEdit = () => {
 			) : (
 				<form onSubmit={handleSubmit(onSubmit)} className={formStyles.form}>
 					<div className={formStyles.fields}>
-						<Field
+						<InputField
 							{...register('title', {
 								required: 'Title is required!',
 							})}
@@ -63,7 +63,7 @@ const MovieEdit = () => {
 							register={register}
 							error={errors.slug}
 						/>
-						<Field
+						<InputField
 							{...register('parameters.country', {
 								required: 'Country is required!',
 							})}
@@ -71,7 +71,7 @@ const MovieEdit = () => {
 							error={errors.parameters?.country}
 							style={{ width: '31%' }}
 						/>
-						<Field
+						<InputField
 							{...register('parameters.duration', {
 								required: 'Duration is required!',
 							})}
@@ -79,7 +79,7 @@ const MovieEdit = () => {
 							error={errors.parameters?.duration}
 							style={{ width: '31%' }}
 						/>
-						<Field
+						<InputField
 							{...register('parameters.year', {
 								required: 'Year is required!',
 							})}

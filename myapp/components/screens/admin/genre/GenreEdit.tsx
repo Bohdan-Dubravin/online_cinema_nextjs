@@ -3,7 +3,7 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { stripHtml } from 'string-strip-html'
 
 import SkeletonLoader from '@/components/ui/SkeletonLoader'
-import Field from '@/components/ui/form-elements/FIeld'
+import InputField from '@/components/ui/form-elements/InputFIeld'
 import SlugField from '@/components/ui/form-elements/SlugField/SlugField'
 
 import AdminNavigation from '@/ui/admin-navigation/AdminNavigation'
@@ -51,7 +51,7 @@ const GenreEdit = () => {
 				) : (
 					<>
 						<div className={formStyles.fields}>
-							<Field
+							<InputField
 								{...register('name', {
 									required: 'Name is required!',
 								})}
@@ -70,7 +70,7 @@ const GenreEdit = () => {
 								/>
 							</div>
 
-							<Field
+							<InputField
 								{...register('icon', {
 									required: 'Icon is required!',
 								})}

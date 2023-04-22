@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
 import SkeletonLoader from '@/components/ui/SkeletonLoader'
-import Field from '@/components/ui/form-elements/FIeld'
+import InputField from '@/components/ui/form-elements/InputFIeld'
 import SlugField from '@/components/ui/form-elements/SlugField/SlugField'
 import UploadField from '@/components/ui/form-elements/UploadField/UploadField'
 
@@ -41,7 +41,7 @@ const ActorEdit: FC = () => {
 			) : (
 				<form onSubmit={handleSubmit(onSubmit)} className={formStyles.form}>
 					<div className={formStyles.fields}>
-						<Field
+						<InputField
 							{...register('name', {
 								required: 'Name is required!',
 							})}

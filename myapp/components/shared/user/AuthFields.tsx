@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { FormState, UseFormRegister } from 'react-hook-form'
 
-import Field from '@/components/ui/form-elements/FIeld'
+import InputField from '@/components/ui/form-elements/InputFIeld'
 
 import { validEmail } from '@/shared/regex'
 
@@ -18,7 +18,7 @@ const AuthFields: FC<IAuthFields> = ({
 }) => {
 	return (
 		<>
-			<Field
+			<InputField
 				{...register('email', {
 					required: 'Email is required!',
 					pattern: {
@@ -29,7 +29,7 @@ const AuthFields: FC<IAuthFields> = ({
 				placeholder="E-mail"
 				error={errors.email}
 			/>
-			<Field
+			<InputField
 				{...register(
 					'password',
 					isPasswordRequired
