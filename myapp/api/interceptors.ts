@@ -15,13 +15,13 @@ const $axios = axios.create({
 	},
 })
 
-$axios.interceptors.request.use((config) => {
-	const accessToken = Cookies.get('accessToken')
-	if (config.headers && accessToken)
-		config.headers.Authorization = `Bearer ${accessToken}`
+// $axios.interceptors.request.use((config) => {
+// 	const accessToken = Cookies.get('accessToken')
+// 	if (config.headers && accessToken)
+// 		// config.headers.Authorization = `Bearer ${accessToken}`
 
-	return config
-})
+// 	return config
+// })
 
 $axios.interceptors.response.use(
 	(config) => config,
