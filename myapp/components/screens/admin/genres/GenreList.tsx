@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import AdminNavigation from '@/ui/admin-navigation/AdminNavigation'
 import AdminHeader from '@/ui/admin-table/AdminHeader/AdminHeader'
 import AdminTable from '@/ui/admin-table/AdminTable/AdminTable'
@@ -9,7 +7,7 @@ import Meta from '@/utils/meta/Meta'
 
 import { useGenres } from './useGenres'
 
-const GenreList: FC = () => {
+const GenreList = () => {
 	const {
 		createAsync,
 		data,

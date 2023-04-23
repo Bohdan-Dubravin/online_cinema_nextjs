@@ -3,7 +3,8 @@ import { useQuery } from 'react-query'
 
 import { GenreService } from '@/services/genre.service'
 
-// import { toastError } from '@/utils/api/withToastrErrorRedux'
+import { toastError } from '@/utils/api/withToastrErrorRedux'
+
 import { IMenuItem } from '../menu.types'
 
 export const usePopularGenres = () => {
@@ -20,9 +21,10 @@ export const usePopularGenres = () => {
 							title: genre.name,
 						})
 					)
-					.splice(0, 4),
+					.splice(0, 4)
+					.filter((g) => g.title),
 			onError(error) {
-				// toastError(error, 'Popular genres menu')
+				toastError(error, 'Popular genres menu')
 			},
 		}
 	)
