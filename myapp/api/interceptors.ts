@@ -12,16 +12,17 @@ const $axios = axios.create({
 	headers: {
 		'Content-Type': 'application/json',
 		Accept: 'application/json',
+		'Access-Control-Allow-Origin': '*',
 	},
 })
 
-// $axios.interceptors.request.use((config) => {
-// 	const accessToken = Cookies.get('accessToken')
-// 	if (config.headers && accessToken)
-// 		// config.headers.Authorization = `Bearer ${accessToken}`
+$axios.interceptors.request.use((config) => {
+	const accessToken = Cookies.get('accessToken')
+	if (config.headers && accessToken)
+		config.headers.Authorization = `Bearer ${accessToken}`
 
-// 	return config
-// })
+	return config
+})
 
 $axios.interceptors.response.use(
 	(config) => config,
