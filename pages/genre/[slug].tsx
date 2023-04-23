@@ -9,7 +9,7 @@ import { MovieService } from '@/services/movie/movie.service'
 
 import Error404 from '../404'
 
-const GenrePage: NextPage<IGenrePage> = ({ genre, movies }) => {
+const GenrePage: NextPage<IGenrePage> = ({ movies, genre }) => {
 	return genre ? <Genre genre={genre} movies={movies} /> : <Error404 />
 }
 
@@ -18,11 +18,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 		const { data: genres } = await GenreService.getAll()
 
 		const paths = genres.map((g) => ({
-			params: { slug: g.slug },
+			params: { slug: g.slug || '404' },
 		}))
 
 		return {
-			paths,
+			paths: paths,
 			fallback: 'blocking',
 		}
 	} catch (e) {
